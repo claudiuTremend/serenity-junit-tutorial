@@ -2,6 +2,7 @@ package serenityswag.authentication.actions;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
+import serenityswag.authentication.LoginForm;
 import serenityswag.authentication.User;
 
 public class LoginActions extends UIInteractionSteps {
@@ -11,9 +12,8 @@ public class LoginActions extends UIInteractionSteps {
         openUrl("https://www.saucedemo.com/");
 
         // Login as a standard user
-
-        find("[data-test='username']").sendKeys(user.getUsername());
-        find("[data-test='password']").sendKeys(user.getPassword());
-        $("[data-test='login-button']").click();
+        $(LoginForm.USER_NAME).sendKeys(user.getUsername());
+        $(LoginForm.PASSWORD).sendKeys(user.getPassword());
+        $(LoginForm.LOGIN_BUTTON).click();
     }
 }

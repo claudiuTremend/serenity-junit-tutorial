@@ -1,18 +1,18 @@
 package serenityswag.inventory;
 
-import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.steps.UIInteractionSteps;
 import org.openqa.selenium.By;
 
 import java.util.List;
 
-public class ProductListPageObject extends PageObject {
+public class ProductList extends UIInteractionSteps {
 
     public List<String> titles() {
+
         return $$(".inventory_item_name").textContents();
     }
-
-    public void openProductDetailsFor(String itemName) {
-        $(By.linkText(itemName)).click();
+    public static By productDetailsLinkFor(String itemName) {
+        return By.linkText(itemName);
     }
 
     public String imageTextForProduct(String productName) {
