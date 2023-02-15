@@ -7,6 +7,10 @@ import java.util.List;
 
 public class ProductList extends UIInteractionSteps {
 
+    public static By addToCartButton(String productName) {
+        return By.xpath("//div[@class='inventory_item'][contains(.,'" + productName + "')]//button");
+    }
+
     public List<String> titles() {
 
         return $$(".inventory_item_name").textContents();
