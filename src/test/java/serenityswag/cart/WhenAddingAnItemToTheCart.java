@@ -66,4 +66,22 @@ public class WhenAddingAnItemToTheCart {
         Serenity.reportThat("The list of added products should be the same as the list of products in the cart",
                 () -> assertThat(productTitlesFromCart).containsAll(productTitles));
     }
+
+    CartPageObject cartPage;
+    @Test
+    public void pricesForEachItemShouldBeShownInTheCart() {
+
+        // add items to the cart
+        List<String> productTitles = productList.titles();
+        productListActions.addItemsToCart(productTitles);
+
+        // enter the cart page
+        cartPage.open();
+
+        // test prices
+        List<CartItem> items = cartPage.items();
+
+        assertThat(items).hasSize(6)
+                .allMatch(item -> item.price() > 0.0);
+    }
 }
