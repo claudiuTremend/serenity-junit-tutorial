@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
+import seleniumeasy._page.TwoInputFieldForm;
 
 public class CalculationTestJUnit5 {
 

@@ -4,15 +4,12 @@ import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.junit.annotations.Concurrent;
 import net.thucydides.junit.annotations.Qualifier;
-import net.thucydides.junit.annotations.TestData;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
-import java.util.Arrays;
-import java.util.Collection;
+import seleniumeasy._page.TwoInputFieldForm;
 
 @RunWith(SerenityParameterizedRunner.class)
 @Concurrent
@@ -23,7 +20,7 @@ public class CalculationsTest {
     private String b;
     private String total;
 
-    @Managed()
+    @Managed(driver = "firefox")
     WebDriver driver;
 
 //    @TestData(columnNames = "A, B, Total")

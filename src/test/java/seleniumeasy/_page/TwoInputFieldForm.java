@@ -1,4 +1,4 @@
-package seleniumeasy;
+package seleniumeasy._page;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.ui.Button;

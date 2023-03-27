@@ -1,10 +1,12 @@
 package todomvc;
 
 import net.serenitybdd.core.Serenity;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import todomvc._pages.ToDoPageObject;
 import todomvc._steps.ModifyTasksActionClass;
 
@@ -18,6 +20,9 @@ public class WhenAddingTasks {
     ToDoPageObject toDoPageObject;
     @Steps
     ModifyTasksActionClass modifyTasksActionClass;
+
+    @Managed()
+    WebDriver driver;
 
     @BeforeEach
     void openTheApp() {
